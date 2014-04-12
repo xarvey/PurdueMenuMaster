@@ -22,7 +22,6 @@ $.ajax({
 	success: function(data)
 	{
 	$(data).find('Menu Breakfast MenuSection Name').each(function()
-	$(data).find('Menu Breakfast MenuSection Name').each(function()
 	{
 		
 		var item = $(this).text();
