@@ -90,5 +90,6 @@ $.ajax({
 	error: function() {
 	$('.timeline').text('fuck you');
 		//confirm('Fuck you');
-		}
+    }
+    
 });
