@@ -58,21 +58,24 @@ $.ajax({
 	$(data).find('Menu Lunch MenuSection MenuItem Name').each(function() //all the item
 	{
 		
-		var item = $(this).text();
+		var item = new menu_item($(this).text(),$(this).next().text(),0);	
 		lunch_item.push(item);
 			});
-	
-	for (i=0;i<lunch.length;i++) //category
+        
+    for (i=0;i<lunch.length;i++)
 	{
-		if (lunch_item.indexOf(lunch[i])==-1){
-			lunch_category.push(lunch[i]);
-			$( ".viewport" ).append( "<div class=\"meal-section\"><p class=\"sectiontext\">"+lunch[i]+"</p><div class=\"meal-section-text\"></div></div>");
-		}
-		else
-		  $( ".viewport" ).append( "<div onClick=\"alerts("+i+");\" class=\"dishcontainer d"+i.toString+"\" href='dish.html'><p class=\"dishtext\">"+lunch[i]+"</p><div class=\"dishbg\"></div</div>" );
-			
+		var flag=false;
+		for (j=0; j<lunch_item.length; j++)
+		 if (lunch_item[j].name==lunch[i]) flag=true;
+		if (!flag) 
+        {
+            lunch_category.push(lunch[i]);
+            $( ".viewport" ).append( "<div class=\"meal-section\"><p class=\"sectiontext\">"+lunch[i]+"</p><div class=\"meal-section-text\"></div></div>");
+        }
+        else{
+             $( ".viewport" ).append( "<div onClick=\"alerts("+i+");\" class=\"dishcontainer d"+i.toString+"\" href='dish.html'><p class=\"dishtext\">"+lunch_item[i].name+"</p><div class=\"dishbg\"></div</div>" );
+        }
 	}
-	
 	
 	
 	
