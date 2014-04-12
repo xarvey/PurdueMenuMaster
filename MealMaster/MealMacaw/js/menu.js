@@ -21,7 +21,10 @@ $.ajax({
 	
 	success: function(data)
 	{
+<<<<<<< HEAD
 	//$(data).find('Menu Breakfast MenuSection Name').each(function()
+=======
+>>>>>>> FETCH_HEAD
 	$(data).find('Menu Breakfast MenuSection Name').each(function()
 	{
 		
