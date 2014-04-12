@@ -1,0 +1,753 @@
+body {
+  background-color: rgb(255, 255, 255);
+  font: 400 0.938em/1.38 'Proxima Nova';
+  color: rgb(0,0,0);
+}
+
+.container-title {
+  position: relative;
+  float: left;
+  width: 100%;
+  height: 86px;
+}
+
+.container-title .container {
+  position: relative;
+  float: left;
+}
+
+.dishbg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  height: 38px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, .5);
+  opacity: 0.25;
+}
+
+.dishcontainer {
+  position: relative;
+  float: left;
+  clear: both;
+  width: 100%;
+  height: 38px;
+}
+
+.dishtext {
+  position: absolute;
+  top: 8px;
+  left: 0;
+  right: 0;
+  z-index: 11;
+  width: 100%;
+  height: 22px;
+  margin: 0 auto;
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 1.38;
+  text-align: center;
+  letter-spacing: 1px;
+  color: rgb(0,0,0);
+}
+
+.element-sidebar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 210px;
+  height: 548px;
+  background-color: rgb(38, 38, 38);
+}
+
+.image {
+  display: block;
+  position: absolute;
+  height: auto;
+  overflow: hidden;
+}
+
+.meal-section {
+  position: relative;
+  float: left;
+  width: 100%;
+  height: 26px;
+}
+
+.meal-section-text {
+  position: absolute;
+  top: 0;
+  left: 0.3125%;
+  z-index: 7;
+  width: 99.6875%;
+  height: 26px;
+  background-color: rgb(236, 231, 231);
+}
+
+.sectiontext {
+  position: absolute;
+  top: 6px;
+  left: 0;
+  right: 0;
+  z-index: 8;
+  width: 100%;
+  height: 15px;
+  margin: 0 auto;
+  font: normal 0.733em/1.38 ProximaNova-Semibold;
+  text-align: center;
+  letter-spacing: 2px;
+  color: rgb(0,0,0);
+  opacity: 0.4;
+}
+
+.tab {
+  position: absolute;
+  width: 33.4375%;
+  height: 39px;
+}
+
+.tab .element {
+  position: relative;
+  float: left;
+  width: 99.9999999999%;
+  height: 39px;
+  background-color: rgb(184, 93, 105);
+}
+
+.tab .text {
+  position: absolute;
+  width: 53.2710280373%;
+  height: 16px;
+  font: 400 0.8em 'PT Sans Caption';
+  color: rgb(255, 255, 255);
+}
+
+.tabselected {
+  position: absolute;
+  top: 47px;
+  left: 33.2213785046%;
+  z-index: 73;
+  width: 33.4375%;
+  height: 39px;
+}
+
+.tabselected .element {
+  position: relative;
+  float: left;
+  z-index: 71;
+  width: 99.9999999999%;
+  height: 39px;
+  margin-left: -1.8691588786%;
+  background-color: rgb(162, 75, 86);
+}
+
+.tabselected .text {
+  position: absolute;
+  top: 9px;
+  left: 0;
+  right: 0;
+  z-index: 72;
+  width: 53.2710280373%;
+  height: 16px;
+  margin: 0 auto;
+  font: 400 0.8em 'PT Sans Caption';
+  color: rgb(255, 255, 255);
+}
+
+.text {
+  line-height: 1.38;
+  text-align: center;
+}
+
+.viewport {
+  position: relative;
+  float: left;
+  clear: both;
+  width: 100%;
+  height: 468px;
+  overflow: scroll;
+}
+
+.viewport .container {
+  width: 100%;
+}
+
+.viewport .text {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.tab ._text {
+  top: 10px;
+  left: 0;
+  right: 0;
+  z-index: 75;
+  margin: 0 auto;
+}
+
+.container-1 {
+  position: relative;
+  float: left;
+  width: 100%;
+  height: 554px;
+  margin-top: -6px;
+  -webkit-transition: all .3s;
+}
+
+.container-11,
+.container-12 {
+  position: relative;
+  float: left;
+  clear: both;
+  height: 38px;
+  margin-top: 1px;
+}
+
+.container-13 {
+  position: relative;
+  float: left;
+  clear: both;
+  height: 26px;
+}
+
+.container-14,
+.container-15,
+.container-5,
+.container-8,
+.container-9 {
+  position: relative;
+  float: left;
+  clear: both;
+  height: 38px;
+}
+
+.container-10,
+.container-16 {
+  position: relative;
+  float: left;
+  clear: both;
+  height: 38px;
+  margin-top: 2px;
+}
+
+.container-17 {
+  position: relative;
+  float: left;
+  clear: both;
+  height: 26px;
+  margin: 1px 0 0 -0.3125%;
+}
+
+.container-18,
+.container-19 {
+  position: relative;
+  float: left;
+  clear: both;
+  height: 38px;
+  margin-left: -0.3125%;
+}
+
+.container-2 {
+  position: absolute;
+  top: 6px;
+  left: -210px;
+  z-index: 6;
+  width: 210px;
+  height: 548px;
+}
+
+.container-20 {
+  position: relative;
+  float: left;
+  clear: both;
+  height: 38px;
+  margin: 1px 0 0 -0.3125%;
+}
+
+.container-3 {
+  z-index: 67;
+  width: 100%;
+  height: 74%;
+  -webkit-transition: all .3s;
+}
+
+.container-4 {
+  clear: both;
+  z-index: 66;
+  width: 6.5625%;
+  height: 16px;
+  margin: -69px 0 0 88.4375%;
+}
+
+.container-6 {
+  position: absolute;
+  top: 104px;
+  left: 0;
+  z-index: 18;
+  height: 38px;
+}
+
+.container-7 {
+  position: relative;
+  float: left;
+  clear: both;
+  height: 26px;
+  margin: 40px 0 0 -0.3125%;
+}
+
+.element-1 {
+  position: relative;
+  float: left;
+  z-index: 62;
+  width: 100%;
+  height: 86px;
+  background-color: rgb(184, 93, 105);
+}
+
+.element-10 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 28;
+  width: 100%;
+  height: 38px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, .5);
+  opacity: 0.25;
+}
+
+.element-11 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 31;
+  width: 100%;
+  height: 38px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, .5);
+  opacity: 0.25;
+}
+
+.element-12 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 34;
+  width: 100%;
+  height: 38px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, .5);
+  opacity: 0.25;
+}
+
+.element-13 {
+  position: absolute;
+  top: 0;
+  left: 0.3125%;
+  z-index: 37;
+  width: 99.6875%;
+  height: 26px;
+  background-color: rgb(236, 231, 231);
+}
+
+.element-14 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 40;
+  width: 100%;
+  height: 38px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, .5);
+  opacity: 0.25;
+}
+
+.element-15 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 43;
+  width: 100%;
+  height: 38px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, .5);
+  opacity: 0.25;
+}
+
+.element-16 {
+  position: relative;
+  float: left;
+  z-index: 46;
+  width: 100%;
+  height: 38px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, .5);
+  opacity: 0.25;
+}
+
+.element-17 {
+  position: absolute;
+  top: 0;
+  left: 0.3125%;
+  z-index: 49;
+  width: 99.6875%;
+  height: 26px;
+  background-color: rgb(236, 231, 231);
+}
+
+.element-18 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 52;
+  width: 100%;
+  height: 38px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, .5);
+  opacity: 0.25;
+}
+
+.element-19 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 55;
+  width: 100%;
+  height: 38px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, .5);
+  opacity: 0.25;
+}
+
+.element-2 {
+  z-index: 74;
+  margin-left: -0.9345794393%;
+}
+
+.element-20 {
+  position: relative;
+  float: left;
+  z-index: 58;
+  width: 100%;
+  height: 38px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, .5);
+  opacity: 0.25;
+}
+
+.element-4 {
+  z-index: 68;
+}
+
+.element-5 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 13;
+  width: 100%;
+  height: 38px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, .5);
+  opacity: 0.25;
+}
+
+.element-6 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 16;
+  width: 100%;
+  height: 38px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, .5);
+  opacity: 0.25;
+}
+
+.element-7 {
+  position: absolute;
+  top: 0;
+  left: 0.3125%;
+  z-index: 19;
+  width: 99.6875%;
+  height: 26px;
+  background-color: rgb(236, 231, 231);
+}
+
+.element-8 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 22;
+  width: 100%;
+  height: 38px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, .5);
+  opacity: 0.25;
+}
+
+.element-9 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 25;
+  width: 100%;
+  height: 38px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, .5);
+  opacity: 0.25;
+}
+
+.image-1 {
+  top: 15px;
+  left: 5%;
+  z-index: 64;
+  width: 20px;
+}
+
+.image-2 {
+  top: 0;
+  right: 0;
+  z-index: 65;
+  width: 21px;
+}
+
+.tab-1 {
+  top: 46px;
+  left: 66.4476246105%;
+  z-index: 76;
+}
+
+.tab-2 {
+  top: 47px;
+  left: 0;
+  z-index: 70;
+}
+
+.text-1 {
+  position: relative;
+  z-index: 1;
+  margin: 125px auto 0;
+  font: normal 1.067em ProximaNova-Regular;
+  letter-spacing: 3px;
+  color: rgb(255, 255, 255);
+}
+
+.text-10 {
+  top: 8px;
+  z-index: 14;
+  height: 22px;
+  font-size: 1em;
+  font-weight: 400;
+  letter-spacing: 1px;
+  color: rgb(0,0,0);
+}
+
+.text-11 {
+  top: 8px;
+  z-index: 17;
+  height: 22px;
+  font-size: 1em;
+  font-weight: 400;
+  letter-spacing: 1px;
+  color: rgb(0,0,0);
+}
+
+.text-12 {
+  top: 6px;
+  z-index: 20;
+  height: 15px;
+  font: normal 0.733em ProximaNova-Semibold;
+  letter-spacing: 2px;
+  color: rgb(0, 0, 0);
+  opacity: 0.4;
+}
+
+.text-13 {
+  top: 8px;
+  z-index: 23;
+  height: 22px;
+  font-size: 1em;
+  font-weight: 400;
+  letter-spacing: 1px;
+  color: rgb(0,0,0);
+}
+
+.text-14 {
+  top: 8px;
+  z-index: 26;
+  height: 22px;
+  font-size: 1em;
+  font-weight: 400;
+  letter-spacing: 1px;
+  color: rgb(0,0,0);
+}
+
+.text-15 {
+  top: 8px;
+  z-index: 29;
+  height: 22px;
+  font-size: 1em;
+  font-weight: 400;
+  letter-spacing: 1px;
+  color: rgb(0,0,0);
+}
+
+.text-16 {
+  top: 8px;
+  z-index: 32;
+  height: 22px;
+  font-size: 1em;
+  font-weight: 400;
+  letter-spacing: 1px;
+  color: rgb(0,0,0);
+}
+
+.text-17 {
+  top: 8px;
+  z-index: 35;
+  height: 22px;
+  font-size: 1em;
+  font-weight: 400;
+  letter-spacing: 1px;
+  color: rgb(0,0,0);
+}
+
+.text-18 {
+  top: 6px;
+  z-index: 38;
+  height: 15px;
+  font: normal 0.733em ProximaNova-Semibold;
+  letter-spacing: 2px;
+  color: rgb(0,0,0);
+  opacity: 0.4;
+}
+
+.text-19 {
+  top: 8px;
+  z-index: 41;
+  height: 22px;
+  font-size: 1em;
+  font-weight: 400;
+  letter-spacing: 1px;
+  color: rgb(0,0,0);
+}
+
+.text-2 {
+  position: relative;
+  z-index: 2;
+  margin: 30px auto 0;
+  font: normal 1.067em ProximaNova-Regular;
+  letter-spacing: 3px;
+  color: rgb(255, 255, 255);
+}
+
+.text-20 {
+  top: 8px;
+  z-index: 44;
+  height: 22px;
+  font-size: 1em;
+  font-weight: 400;
+  letter-spacing: 1px;
+  color: rgb(0,0,0);
+}
+
+.text-21 {
+  top: 8px;
+  z-index: 47;
+  height: 22px;
+  font-size: 1em;
+  font-weight: 400;
+  letter-spacing: 1px;
+  color: rgb(0,0,0);
+}
+
+.text-22 {
+  top: 6px;
+  z-index: 50;
+  height: 15px;
+  font: normal 0.733em ProximaNova-Semibold;
+  letter-spacing: 2px;
+  color: rgb(0,0,0);
+  opacity: 0.4;
+}
+
+.text-23 {
+  top: 8px;
+  z-index: 53;
+  height: 22px;
+  font-size: 1em;
+  font-weight: 400;
+  letter-spacing: 1px;
+  color: rgb(0,0,0);
+}
+
+.text-24 {
+  top: 8px;
+  z-index: 56;
+  height: 22px;
+  font-size: 1em;
+  font-weight: 400;
+  letter-spacing: 1px;
+  color: rgb(0,0,0);
+}
+
+.text-25 {
+  top: 8px;
+  z-index: 59;
+  height: 22px;
+  font-size: 1em;
+  font-weight: 400;
+  letter-spacing: 1px;
+  color: rgb(0,0,0);
+}
+
+.text-3 {
+  position: relative;
+  z-index: 3;
+  margin: 30px auto 0;
+  font: normal 1.067em ProximaNova-Regular;
+  letter-spacing: 3px;
+  color: rgb(255, 255, 255);
+}
+
+.text-4 {
+  position: relative;
+  z-index: 4;
+  margin: 34px auto 0;
+  font: normal 1.067em ProximaNova-Regular;
+  letter-spacing: 3px;
+  color: rgb(255, 255, 255);
+}
+
+.text-5 {
+  position: relative;
+  z-index: 5;
+  margin: 30px auto 0;
+  font: normal 1.067em ProximaNova-Regular;
+  letter-spacing: 3px;
+  color: rgb(255, 255, 255);
+}
+
+.text-6 {
+  display: inline-block;
+  position: absolute;
+  top: 15px;
+  left: 0;
+  right: 0;
+  z-index: 63;
+  margin: 0 auto;
+  font: 700 1.067em 'PT Sans Caption';
+  letter-spacing: 2px;
+  color: rgb(255, 255, 255);
+}
+
+.text-9 {
+  top: 9px;
+  left: 23.3644859813%;
+  z-index: 69;
+}

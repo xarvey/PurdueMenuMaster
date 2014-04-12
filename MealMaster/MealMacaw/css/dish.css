@@ -1,0 +1,210 @@
+body {
+  background-color: rgb(255, 255, 255);
+  font: normal 1em/1.38 ProximaNova-Semibold;
+  color: rgb(255, 255, 255);
+}
+
+.container-content {
+  float: left;
+  clear: both;
+  width: 100%;
+  height: 332px;
+  margin-top: 70px;
+}
+
+.container-content .text {
+  margin: 0 auto;
+  color: rgb(0,0,0);
+}
+
+.container-title {
+  float: left;
+  width: 100%;
+  height: 45px;
+}
+
+.container-title .text {
+  display: inline-block;
+  position: absolute;
+  top: 15px;
+  left: 0;
+  right: 0;
+  z-index: 16;
+  margin: 0 auto;
+  font-family: 'PT Sans Caption';
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: rgb(255, 255, 255);
+}
+
+.element {
+  position: relative;
+  float: left;
+  z-index: 15;
+  width: 100%;
+  height: 46px;
+  background-color: rgb(184, 93, 105);
+}
+
+.element-sidebar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 210px;
+  height: 548px;
+  background-color: rgb(38, 38, 38);
+}
+
+.image {
+  display: block;
+  position: absolute;
+  height: auto;
+  overflow: hidden;
+}
+
+.text {
+  line-height: 1.38;
+  text-align: center;
+}
+
+._button {
+  display: block;
+  width: 50%;
+  height: 42px;
+  margin: 0 auto;
+  border-radius: 3px;
+  background-color: rgb(102, 210, 188);
+  font-size: 0.875em;
+  line-height: 1.38;
+  text-align: center;
+  letter-spacing: 2px;
+  color: rgb(255, 255, 255);
+}
+
+._container {
+  position: relative;
+  float: left;
+}
+
+.container-1 {
+  width: 100%;
+  height: 554px;
+  margin-top: -6px;
+  -webkit-transition: all .3s;
+}
+
+.container-2 {
+  position: absolute;
+  top: 6px;
+  left: -210px;
+  z-index: 6;
+  width: 210px;
+  height: 548px;
+}
+
+.container-3 {
+  width: 100%;
+  height: 46%;
+  -webkit-transition: all .3s;
+}
+
+.container-4 {
+  clear: both;
+  z-index: 19;
+  width: 6.5625%;
+  height: 16px;
+  margin: -29px 0 0 88.4375%;
+}
+
+.image-1 {
+  top: 15px;
+  left: 5%;
+  z-index: 17;
+  width: 20px;
+}
+
+.image-2 {
+  top: 0;
+  right: 0;
+  z-index: 18;
+  width: 21px;
+}
+
+.text-1 {
+  position: relative;
+  z-index: 1;
+  margin: 125px auto 0;
+  font-family: ProximaNova-Regular;
+  letter-spacing: 3px;
+  color: rgb(255, 255, 255);
+}
+
+.text-2 {
+  position: relative;
+  z-index: 2;
+  margin: 30px auto 0;
+  font-family: ProximaNova-Regular;
+  letter-spacing: 3px;
+  color: rgb(255, 255, 255);
+}
+
+.text-3 {
+  position: relative;
+  z-index: 3;
+  margin: 30px auto 0;
+  font-family: ProximaNova-Regular;
+  letter-spacing: 3px;
+  color: rgb(255, 255, 255);
+}
+
+.text-4 {
+  position: relative;
+  z-index: 4;
+  margin: 34px auto 0;
+  font-family: ProximaNova-Regular;
+  letter-spacing: 3px;
+  color: rgb(255, 255, 255);
+}
+
+.text-5 {
+  position: relative;
+  z-index: 5;
+  margin: 30px auto 0;
+  font-family: ProximaNova-Regular;
+  letter-spacing: 3px;
+  color: rgb(255, 255, 255);
+}
+
+.text-7 {
+  width: 218px;
+  font-size: 1.688em;
+  letter-spacing: 2px;
+}
+
+.text-8 {
+  width: 100%;
+  margin-top: 3px;
+  font-family: 'Proxima Nova';
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+._button-1 {
+  margin-top: 18px;
+}
+
+._button-2 {
+  margin-top: 9px;
+}
+
+._button-3 {
+  margin-top: 10px;
+}
+
+._button-4 {
+  margin-top: 11px;
+}
+
+._button-5 {
+  margin-top: 12px;
+}
