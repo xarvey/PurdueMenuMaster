@@ -10,9 +10,9 @@ var lunch_item = new Array();
 
 function menu_item(name,vegetarian,score)
 {
-this.name=name;
-this.vegetarian=vegetarian;
-this.score=score;
+    this.name=name;
+    this.vegetarian=vegetarian;
+    this.score=score;
 }
 
 $.ajax({
@@ -68,7 +68,7 @@ $.ajax({
 			$( ".viewport" ).append( "<div class=\"meal-section\"><p class=\"sectiontext\">"+lunch[i]+"</p><div class=\"meal-section-text\"></div></div>");
 		}
 		else
-		  $( ".viewport" ).append( "<div onClick=\"window.location='dish.html';\" class=\"dishcontainer\"><p class=\"dishtext\">"+lunch[i]+"</p><div class=\"dishbg\"></div</div>" );
+		  $( ".viewport" ).append( "<div onClick=alerts class=\"dishcontainer\" href='dish.html'><p class=\"dishtext\">"+lunch[i]+"</p><div class=\"dishbg\"></div</div>" );
 			
 	}
 	
@@ -93,3 +93,8 @@ $.ajax({
     }
     
 });
+
+function alerts(){
+    window.location='dish.html';
+    alert("FUCK");
+}

@@ -1,6 +1,7 @@
+var mapDiv;
 window.onload = function(){
-    mapDiv = document.getElementById('map');
-    //mapDiv.innerHTML = 'Trying to get your location...';
+    mapDiv = $('.location');
+    mapDiv.innerHTML = 'Trying to get your location...';
     if(navigator.geolocation)
         navigator.geolocation.getCurrentPosition(handleGetCurrentPosition, handleGetCurrentPositionError);
 }

@@ -2,7 +2,6 @@
   var $drawer = $('.js-drawer');
   var $screen = $('.js-screen');
 
-
   $drawer.on('click', toggleSidebar);
 
   function toggleSidebar(e){
