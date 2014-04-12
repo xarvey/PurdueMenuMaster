@@ -2,6 +2,15 @@ var breakfast = new Array();
 var lunch = new Array();
 var dinner = new Array();
 
+var breakfast_category =new Array();
+var lunch_category = new Array();
+
+var breakfast_item =new Array();
+var lunch_item = new Array();
+
+
+
+
 var counter;
 
 $.ajax({
@@ -15,18 +24,52 @@ $.ajax({
 		
 		var item = $(this).text();
 		breakfast.push(item);
-		//alert(item);
+		
 	});
 	
+	$(data).find('Menu Breakfast MenuSection MenuItem Name').each(function()
+	{
+		
+		var item = $(this).text();
+		breakfast_item.push(item);
+	});
 	
-	$(data).find('Menu Lunch MenuSection Name').each(function()
+	for (i=0;i<breakfast.length;i++)
+	{
+		if (breakfast_item.indexOf(breakfast[i])==-1)
+			breakfast_category.push(breakfast[i]);
+	}
+	
+	$(data).find('Menu Lunch MenuSection Name').each(function() //all the name
 	{
 		
 		var item = $(this).text();
 		lunch.push(item);
-        $( ".viewport" ).append( "<div onClick=\"window.location='dish.html';\" class=\"dishcontainer\"><p class=\"dishtext\">"+item+"</p><div class=\"dishbg\"></div</div>" );
+        
 		
 	});
+	
+	$(data).find('Menu Lunch MenuSection MenuItem Name').each(function() //all the item
+	{
+		
+		var item = $(this).text();
+		lunch_item.push(item);
+			});
+	
+	for (i=0;i<lunch.length;i++) //category
+	{
+		if (lunch_item.indexOf(lunch[i])==-1)
+		{
+			lunch_category.push(lunch[i]);
+			$( ".viewport" ).append( "<div onClick=\"window.location='dish.html';\" class=\"dishcontainer\"><p class=\"dishtext\">"+"@@@@"+lunch[i]+"@@@@"+"</p><div class=\"dishbg\"></div</div>" );
+		}
+		else
+		$( ".viewport" ).append( "<div onClick=\"window.location='dish.html';\" class=\"dishcontainer\"><p class=\"dishtext\">"+lunch[i]+"</p><div class=\"dishbg\"></div</div>" );
+			
+	}
+	
+	
+	
 	
 	$(data).find('Menu Dinner MenuSection Name').each(function()
 	{
