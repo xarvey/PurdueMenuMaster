@@ -73,7 +73,7 @@ body {
   height: 42px;
   margin: 0 auto;
   border-radius: 3px;
-  background-color: rgb(102, 210, 188);
+  background-color: rgb(18, 186, 181);
   font-size: 0.875em;
   line-height: 1.38;
   text-align: center;
@@ -134,7 +134,7 @@ body {
   position: relative;
   z-index: 1;
   margin: 125px auto 0;
-  font-family: ProximaNova-Regular;
+  font-family: Ubuntu;
   letter-spacing: 3px;
   color: rgb(255, 255, 255);
 }
@@ -143,7 +143,7 @@ body {
   position: relative;
   z-index: 2;
   margin: 30px auto 0;
-  font-family: ProximaNova-Regular;
+  font-family: Ubuntu;
   letter-spacing: 3px;
   color: rgb(255, 255, 255);
 }
@@ -152,7 +152,7 @@ body {
   position: relative;
   z-index: 3;
   margin: 30px auto 0;
-  font-family: ProximaNova-Regular;
+  font-family: Ubuntu;
   letter-spacing: 3px;
   color: rgb(255, 255, 255);
 }
@@ -161,7 +161,7 @@ body {
   position: relative;
   z-index: 4;
   margin: 34px auto 0;
-  font-family: ProximaNova-Regular;
+  font-family: Ubuntu;
   letter-spacing: 3px;
   color: rgb(255, 255, 255);
 }
@@ -170,7 +170,7 @@ body {
   position: relative;
   z-index: 5;
   margin: 30px auto 0;
-  font-family: ProximaNova-Regular;
+  font-family: Ubuntu;
   letter-spacing: 3px;
   color: rgb(255, 255, 255);
 }
