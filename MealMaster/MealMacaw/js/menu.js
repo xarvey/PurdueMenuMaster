@@ -12,15 +12,22 @@ var dinner_item = new Array();
 
 
 var current = 2;
-function menu_item(name,vegetarian,score)
+function menu_item(name,vegetarian,score,location)
 {
     this.name=name;
     this.vegetarian=vegetarian;
     this.score=score;
+    this.location=location;
 }
-
+var dining_court=['earhart',
+                  'wiley',
+                  'ford',
+                  'hillenbrand',
+                  'windsor',                  
+                 ];
 $.ajax({
-	url: 'menu.xml',
+    
+	url: dining_court[0]+'.xml',
 	dataType: 'xml',
     
     
@@ -40,6 +47,30 @@ $.ajax({
     }
     
 });
+
+        /*        
+$.ajax({
+    
+	url: dining_court[1]+'.xml',
+	dataType: 'xml',
+    
+    
+	
+	success: function(data)
+	{
+	get_breakfast(data);
+	get_lunch(data);	
+    get_dinner(data);
+	show_lunch();
+    localStorage.setItem("currentTab",1);
+	},
+	
+	error: function() {
+	$('.timeline').text('fuck you');
+		//confirm('Fuck you');
+    }
+    
+});*/
 
 
 function show_breakfast()
