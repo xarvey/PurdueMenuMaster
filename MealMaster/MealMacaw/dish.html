@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="initial-scale=1.0">
   <title>Purdue Meal</title>
-  <link href="http://fonts.googleapis.com/css?family=PT+Sans Caption:700,400" rel="stylesheet" type="text/css">
+  <link href="http://fonts.googleapis.com/css?family=PT+Sans Caption:700,400|Ubuntu" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="css/standardize.css">
   <link rel="stylesheet" href="css/dish-grid.css">
   <link rel="stylesheet" href="css/dish.css">
@@ -18,14 +18,14 @@
 <body class="body dish clearfix">
   <div class="container _container container-1 js-screen">
     <div class="container container-2 clearfix">
-      <div class="element checkinbg"></div>
       <img class="image checkin" src="images/checkin.png">
-      <div class="element-sidebar"></div>
-      <p onClick="window.location='dining.html';localStorage.setItem('dining','0');" class="text text-1">EARHART</p>
-      <p onClick="window.location='dining.html';localStorage.setItem('dining','1');" class="text text-2">WILEY</p>
+      <div class="element checkinbg"></div>
+      <p onClick="localStorage.setItem('dining','0');window.location='dining.html';" class="text text-1 sidelink">EARHART</p>
+      <p onClick="localStorage.setItem('dining','1');window.location='dining.html';" class="text text-2">WILEY</p>
       <p class="text text-3">FORD</p>
       <p class="text text-4">HILLENBRAND</p>
       <p class="text text-5">WINDSOR</p>
+      <div class="element-sidebar"></div>
     </div>
     <div class="container-title">
       <div class="container _container container-3">
@@ -56,7 +56,6 @@
       {
            localStorage.setItem(localStorage.getItem('menu'),p);
       }
-    function
   </script>
   
 </body>
