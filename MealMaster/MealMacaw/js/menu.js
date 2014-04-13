@@ -31,6 +31,7 @@ $.ajax({
 	get_lunch(data);	
     get_dinner(data);
 	show_lunch();
+    localStorage.setItem("currentTab",1);
 	},
 	
 	error: function() {
