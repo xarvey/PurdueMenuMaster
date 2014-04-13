@@ -18,18 +18,18 @@
 <body class="body dining clearfix">
   <div class="container container-1 js-screen">
     <div class="container container-2 clearfix">
-      <p onClick="window.location='dining.html';" class="text _text text-1">EARHART</p>
-      <p class="text _text text-2">WILEY</p>
-      <p class="text _text text-3">FORD</p>
-      <p class="text _text text-4">HILLENBRAND</p>
-      <p class="text _text text-5">WINDSOR</p>
+      <p onClick="localStorage.setItem('dining','0');window.location='dining.html';" class="text text-1 sidelink">EARHART</p>
+      <p onClick="localStorage.setItem('dining','1');window.location='dining.html';" class="text text-2">WILEY</p>
+      <p class="text text-3">FORD</p>
+      <p class="text text-4">HILLENBRAND</p>
+      <p class="text text-5">WINDSOR</p>
       <div class="element-sidebar"></div>
     </div>
     <div class="container-title">
       <div class="container container-3">
         <div class="element element-1"></div>
         <img class="image image-1 js-drawer" src="images/drawer.png">
-        <p class="text _text text-6 dining-title">Earhart</p>
+        <p class="text _text text-6 diningname">Earhart</p>
         <div onClick="window.location='index.html';" class="container container-4">
           <img class="image image-2" src="images/rank.png">
         </div>
@@ -105,10 +105,5 @@
   </script>
   <script src="js/dining.js"></script>
   <script src="js/menu.js"></script>
-    <script>
-        $(document).ready(function(){
-            $('body div').slideLeft();
-        });
-    </script>
 </body>
 </html>

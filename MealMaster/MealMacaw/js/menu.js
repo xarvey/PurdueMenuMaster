@@ -19,11 +19,11 @@ function menu_item(name,vegetarian,score,location)
     this.score=score;
     this.location=location;
 }
-var dining_court=['earhart',
-                  'wiley',
-                  'ford',
-                  'hillenbrand',
-                  'windsor',                  
+var dining_court=['Earhart',
+                  'Wiley',
+                  'Ford',
+                  'Hillenbrand',
+                  'Windsor',                  
                  ];
                   
 var dining; 
@@ -35,7 +35,9 @@ $.ajax({
 	
 	success: function(data)
 	{
-        
+        x = parseInt(localStorage.getItem("dining"));
+        localStorage.setItem("diningname", dining_court[x]);
+        $('.diningname').text(localStorage.getItem('diningname'));
 	    get_breakfast(data,x);
 	    get_lunch(data,x);	
         get_dinner(data,x);

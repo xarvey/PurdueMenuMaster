@@ -3,7 +3,7 @@
   var $screen = $('.js-screen');
 
   $drawer.on('click', toggleSidebar);
-
+  $('.diningname').text(localStorage.getItem("diningname"));
   function toggleSidebar(e){
     var target = 210; 
     if($screen.position().left == 210)
