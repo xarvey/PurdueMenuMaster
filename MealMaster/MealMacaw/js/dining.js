@@ -2,7 +2,7 @@
   var $drawer = $('.js-drawer');
   var $screen = $('.js-screen');
 
-  $drawer.on('click', toggleSidebar);
+  $('.js-drawer').on('click', toggleSidebar);
   $('.diningname').text(localStorage.getItem("diningname"));
   function toggleSidebar(e){
     var target = 210; 

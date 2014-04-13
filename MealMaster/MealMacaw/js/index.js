@@ -14,7 +14,7 @@
     $screen.css('left', target); 
   }
  
-})
+})();
  var tot=new Array();
   function cal_score()
     {
