@@ -63,14 +63,15 @@
   <script>
     function alerts(e){
         current = e;
+        var x = localStorage.getItem("dining");
         window.location='dish.html';
         //alert(window.lunch[current]);
         if (localStorage.getItem("currentTab")=="0")
-        localStorage.setItem("menu", breakfast[current]);
+        localStorage.setItem("menu", breakfast[x][current]);
         if (localStorage.getItem("currentTab")=="1")
-        localStorage.setItem("menu", lunch[current]);
+        localStorage.setItem("menu", lunch[x][current]);
         if (localStorage.getItem("currentTab")=="2")
-        localStorage.setItem("menu", dinner[current]);
+        localStorage.setItem("menu", dinner[x][current]);
         
         
     }
