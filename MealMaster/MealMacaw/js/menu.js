@@ -38,9 +38,12 @@ $.ajax({
         x = parseInt(localStorage.getItem("dining"));
         localStorage.setItem("diningname", dining_court[x]);
         $('.diningname').text(localStorage.getItem('diningname'));
-	    get_breakfast(data,x);
-	    get_lunch(data,x);	
-        get_dinner(data,x);
+        for (var i=0; i<2; i++)
+        {
+	       get_breakfast(data,i);
+	       get_lunch(data,i);	
+           get_dinner(data,i);
+        }
 	    show_lunch();
         localStorage.setItem("currentTab",1);
 	},
@@ -52,30 +55,7 @@ $.ajax({
     
 });
 
-        /*        
-$.ajax({
     
-	url: dining_court[1]+'.xml',
-	dataType: 'xml',
-    
-    
-	
-	success: function(data)
-	{
-	get_breakfast(data);
-	get_lunch(data);	
-    get_dinner(data);
-	show_lunch();
-    localStorage.setItem("currentTab",1);
-	},
-	
-	error: function() {
-	$('.timeline').text('fuck you');
-		//confirm('Fuck you');
-    }
-    
-});*/
-
 
 function show_breakfast()
 {
