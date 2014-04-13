@@ -32,7 +32,7 @@ var x = parseInt(localStorage.getItem("dining"));
 function parseFile( path, id, show) {
 
     function parseXml(data){
-            x = parseInt(localStorage.getItem("dining"));
+            x = id;
             localStorage.setItem("diningname", dining_court[x]);
             $('.diningname').text(localStorage.getItem('diningname'));
             init();
@@ -53,6 +53,7 @@ function parseFile( path, id, show) {
         success: parseXml
     });
 }
+
 findBest();
 //parseFile("Earhart.xml", 0, false);
 //parseFile("Wiley.xml", 1, false);
@@ -60,9 +61,11 @@ findBest();
 function findBest(){
        parseFile("Earhart.xml", 0, false);
        parseFile("Wiley.xml", 1, false);
+        var x = 0;
+    
        var ear = parseInt(localStorage.getItem("Earhart"));
        var wil = parseInt(localStorage.getItem("Wiley"));
-       if(ear>wil){
+       if(ear>=wil){
             $('.recName').text("EHRT");
             $('.recDes').text("Earhart Dining Court");
             $('.js-fav1').text(localStorage.getItem("max0_0_name"));
@@ -71,6 +74,7 @@ function findBest(){
        else{
             $('.recName').text("WILY");
             $('.recDes').text("Wiley Dining Court");
+            console.log(localStorage.getItem("max1_0_name"));
             $('.js-fav1').text(localStorage.getItem("max1_0_name"));
             $('.js-fav2').text(localStorage.getItem("max1_1_name"));
        }
@@ -103,7 +107,7 @@ function cal_score(j)
         for (i=0; i<breakfast_item[j].length; i++)
         {
             var num=parseInt(localStorage.getItem(breakfast_item[j][i].name));
-            console.log(num + " " + dining_court[j] + " " + breakfast_item[j][i].name);
+            //console.log(num + " " + dining_court[j] + " " + breakfast_item[j][i].name);
             if( parseInt(localStorage.getItem("max"+j+"_0")) < num ){
                 localStorage.setItem("max"+j+"_0", num);
                 localStorage.setItem("max"+j+"_0_name", breakfast_item[j][i].name);
