@@ -58,13 +58,42 @@ findBest();
 //parseFile("Earhart.xml", 0, false);
 //parseFile("Wiley.xml", 1, false);
 
+
 function findBest(){
+       localStorage.setItem(dining_court[0],-1);
+        localStorage.setItem(dining_court[1],-1);
        parseFile("Earhart.xml", 0, false);
        parseFile("Wiley.xml", 1, false);
-        var x = 0;
-    
+       var x = 0;
+}
+
+var asyncLoop = function(o){
+    var i=-1;
+    var loop = function(){
+        i++;
+        i%=3;
+        if(parseInt(localStorage.getItem("Wiley"))!=-1){o.callback(); return;}
+        o.functionToLoop(loop,i);
+    } 
+    loop();//init
+}
+
+asyncLoop({
+    length : 1000,
+    functionToLoop : function(loop, i){
+        setTimeout(function(){
+            //document.write('Iteration ' + i + ' <br>');        
+            $('.recName').text("---");
+            $('.recDes').text("Calculating");
+            loop();
+            
+        },100);
+    },
+    callback : function(){
+        //document.write('All done!');
        var ear = parseInt(localStorage.getItem("Earhart"));
        var wil = parseInt(localStorage.getItem("Wiley"));
+       $('location').text("Recommended");
        if(ear>=wil){
             $('.recName').text("EHRT");
             $('.recDes').text("Earhart Dining Court");
@@ -78,7 +107,13 @@ function findBest(){
             $('.js-fav1').text(localStorage.getItem("max1_0_name"));
             $('.js-fav2').text(localStorage.getItem("max1_1_name"));
        }
-}
+    }    
+});
+
+
+
+
+
 
 function init()
 {
