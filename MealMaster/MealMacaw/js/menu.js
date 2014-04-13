@@ -27,6 +27,7 @@ var dining_court=['earhart',
                  ];
                   
 var dining; 
+var x = parseInt(localStorage.getItem("dining"));
 $.ajax({
     
 	url: dining_court[parseInt(localStorage.getItem("dining"))]+'.xml',
@@ -34,7 +35,7 @@ $.ajax({
 	
 	success: function(data)
 	{
-        var x = parseInt(localStorage.getItem("dining"));
+        
 	    get_breakfast(data,x);
 	    get_lunch(data,x);	
         get_dinner(data,x);
@@ -127,18 +128,19 @@ function get_breakfast(data,x)
 	$(data).find('Menu Breakfast MenuSection MenuItem Name').each(function()
 	{			
 		var item = new menu_item($(this).text(),$(this).next().text(),0);	
-		breakfast_item[x].push(item);
-		
+		breakfast_item[x].push(item);		
+        if (localStorage.getItem(item.name)==null)
+            localStorage.setItem(item.name,item.score);
 	});
 	
-	for (i=0;i<breakfast.length;i++)
+	for (i=0;i<breakfast[x].length;i++)
 	{
 		var flag=false;
 		for (j=0; j<breakfast_item[x].length; j++)
 		 if (breakfast_item[x][j].name==breakfast[x][i]) flag=true;
 		if (!flag) 
         {
-            breakfast_category[x].push(breakfast[i]);
+            breakfast_category[x].push(breakfast[x][i]);
         }
 	}    
     }
@@ -164,14 +166,14 @@ function get_lunch(data,x)
             localStorage.setItem(item.name,item.score);
     });
         
-    for (i=0;i<lunch.length;i++)
+    for (i=0;i<lunch[x].length;i++)
 	{
 		var flag=false;
 		for (j=0; j<lunch_item[x].length; j++)
 		 if (lunch_item[x][j].name==lunch[x][i]) flag=true;
 		if (!flag) 
         {
-            lunch_category[x].push(lunch[i]);
+            lunch_category[x].push(lunch[x][i]);
         }
 	}
 }
@@ -199,14 +201,14 @@ function get_dinner(data,x)
         localStorage.setItem(item.name,item.score);
 			});
         
-    for (i=0;i<dinner.length;i++)
+    for (i=0;i<dinner[x].length;i++)
 	{
 		var flag=false;
 		for (j=0; j<dinner_item[x].length; j++)
 		 if (dinner_item[x][j].name==dinner[x][i]) flag=true;
 		if (!flag) 
         {
-            dinner_category[x].push(dinner[i]);
+            dinner_category[x].push(dinner[x][i]);
         }
 	}
 }
