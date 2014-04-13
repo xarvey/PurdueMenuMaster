@@ -67,6 +67,14 @@
         //alert(window.lunch[current]);
         localStorage.setItem("menu", lunch[current]);
     }
+    function toBreakfast(){
+        $('.viewport').empty();
+        localStorage.setItem("currentTab","0");
+        $('.tabselected').addClass("tab");
+        $('.tabselected').removeClass("tabselected");
+        $('.tab-2').addClass("tabselected");
+        $('.tab-2').removeClass("tab");
+    }
   </script>
   <script src="js/dining.js"></script>
   <script src="js/menu.js"></script>
