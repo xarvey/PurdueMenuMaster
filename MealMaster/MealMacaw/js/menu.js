@@ -42,8 +42,19 @@ $.ajax({
         get_breakfast(data,x);
 	    get_lunch(data,x);	
         get_dinner(data,x);    
-	    show_lunch();
-        localStorage.setItem("currentTab",1);
+	    var d = new Date().getHours();
+        if(d<=9){
+            toBreakfast();
+            localStorage.setItem("currentTab",0);
+        }
+        else if(d<=15){
+            toLunch();
+            localStorage.setItem("currentTab",1);
+        }
+        else {
+            todinner();
+            localStorage.setItem("currentTab",2);
+        }
         cal_score(x);
 	},
 	

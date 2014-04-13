@@ -40,8 +40,19 @@ function parseFile( path, id, show) {
             get_lunch(data,x);	
             get_dinner(data,x);
             if(show){
-                show_lunch();
-                localStorage.setItem("currentTab",1);
+                var d = new Date().getHours();
+                if(d<=9){
+                    show_breakfast();
+                    localStorage.setItem("currentTab",0);
+                }
+                else if(d<=15){
+                    show_lunch();
+                    localStorage.setItem("currentTab",1);
+                }
+                else {
+                    show_dinner();
+                    localStorage.setItem("currentTab",2);
+                }
             }
             cal_score(x);
     };
@@ -58,6 +69,12 @@ findBest();
 //parseFile("Earhart.xml", 0, false);
 //parseFile("Wiley.xml", 1, false);
 
+function Show(){
+    if(localStorage.getItem('diningname')=='0')
+        parseFile("Earhart.xml", 0, true);
+    else 
+        parseFile("Earhart.xml", 1, true);
+}
 
 function findBest(){
        localStorage.setItem(dining_court[0],-1);
