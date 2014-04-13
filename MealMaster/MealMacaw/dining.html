@@ -29,7 +29,7 @@
       <div class="container container-3">
         <div class="element element-1"></div>
         <img class="image image-1 js-drawer" src="images/drawer.png">
-        <p class="text _text text-6">Earhart</p>
+        <p class="text _text text-6 dining-title">Earhart</p>
         <div onClick="window.location='index.html';" class="container container-4">
           <img class="image image-2" src="images/rank.png">
         </div>
@@ -104,5 +104,10 @@
   </script>
   <script src="js/dining.js"></script>
   <script src="js/menu.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('body div').slideLeft();
+        });
+    </script>
 </body>
 </html>
