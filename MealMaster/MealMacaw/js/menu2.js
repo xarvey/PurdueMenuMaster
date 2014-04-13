@@ -23,24 +23,24 @@ function checkInEarhart()
     for (i=0; i<breakfast_item[j].length; i++)
     {
         var num=parseInt(localStorage.getItem(breakfast_item[j][i].name));
-        if( num == 1 ){
-            localStorage.setItem(breakfast_item[j][i].name,2);
+        if( num == 0 ){
+            localStorage.setItem(breakfast_item[j][i].name,1);
         }
     }
     else if (d<=15)
     for (i=0; i<lunch_item[j].length; i++)
     {
         var num=parseInt(localStorage.getItem(lunch_item[j][i].name));
-        if( num == 1 ){
-            localStorage.setItem(lunch_item[j][i].name,2);
+        if( num == 0 ){
+            localStorage.setItem(lunch_item[j][i].name,1);
         }
     }
     else if (d<=21)
     for (i=0; i<dinner_item[j].length; i++)
     {
         var num=parseInt(localStorage.getItem(dinner_item[j][i].name));
-        if( num == 1 ){
-            localStorage.setItem(dinner_item[j][i].name,2);
+        if( num == 0 ){
+            localStorage.setItem(dinner_item[j][i].name,1);
         }
     }
     findBest();
@@ -321,7 +321,7 @@ function get_breakfast(data,x)
 	
 	$(data).find('Menu Breakfast MenuSection MenuItem Name').each(function()
 	{			
-		var item = new menu_item($(this).text(),$(this).next().text(),1);	
+		var item = new menu_item($(this).text(),$(this).next().text(),0);	
 		breakfast_item[x].push(item);		
         if (localStorage.getItem(item.name)==null)
             localStorage.setItem(item.name,item.score);
@@ -354,7 +354,7 @@ function get_lunch(data,x)
 	$(data).find('Menu Lunch MenuSection MenuItem Name').each(function() //all the item
 	{
 		
-		var item = new menu_item($(this).text(),$(this).next().text(),1);	
+		var item = new menu_item($(this).text(),$(this).next().text(),0);	
 		lunch_item[x].push(item);
         if (localStorage.getItem(item.name)==null)
             localStorage.setItem(item.name,item.score);
@@ -389,7 +389,7 @@ function get_dinner(data,x)
 	$(data).find('Menu Dinner MenuSection MenuItem Name').each(function() //all the item
 	{
 		
-		var item = new menu_item($(this).text(),$(this).next().text(),1);	
+		var item = new menu_item($(this).text(),$(this).next().text(),0);	
 		dinner_item[x].push(item);
         if (localStorage.getItem(item.name)==null)
         localStorage.setItem(item.name,item.score);
