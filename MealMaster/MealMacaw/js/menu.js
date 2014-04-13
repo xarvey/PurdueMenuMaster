@@ -60,6 +60,8 @@ $.ajax({
 		
 		var item = new menu_item($(this).text(),$(this).next().text(),0);	
 		lunch_item.push(item);
+        if (localStorage.getItem(item.name)==null)
+        localStorage.setItem(item.name,item.score);
 			});
         
     for (i=0;i<lunch.length;i++)

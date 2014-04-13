@@ -38,17 +38,23 @@
     <div class="container-content">
       <p id="dish" class="text text-7">Italian Sausage</p>
       <p class="text text-8">Rate this dish!&nbsp;</p>
-      <button onClick="window.location='index.html';" class="_button _button-1">Excellent</button>
-      <button onClick="window.location='dining.html';" class="_button _button-2">Good</button>
-      <button class="_button _button-3">Ok</button>
-      <button class="_button _button-4">Not so well</button>
-      <button class="_button _button-5">I hate it!</button>
+      <button onClick="alert('8=======D 、、'); window.location='dining.html';add_point(2)" class="_button _button-1">Excellent</button>
+      <button onClick="alert('8=====D'); window.location='dining.html';add_point(1)" class="_button _button-2">Good</button>
+      <button onClick="alert('8===D'); window.location='dining.html';add_point(0)" class="_button _button-3">Ok</button>
+      <button onClick="alert('8==D'); window.location='dining.html';add_point(-1)" class="_button _button-4">Not so well</button>
+      <button onClick="alert('8'); window.location='dining.html';add_point(-2)" class="_button _button-5">I hate it!</button>
     </div>
   </div>
 
   <script src="js/jquery-min.js"></script>
   <script src="js/dish.js"></script>
   <script src="js/menu.js"></script>
+  <script> 
+   function add_point(p)
+      {
+           localStorage.setItem(localStorage.getItem('menu'),p);
+      }
+  </script>
   
 </body>
 </html>
