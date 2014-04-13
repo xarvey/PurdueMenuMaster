@@ -65,11 +65,19 @@
         current = e;
         window.location='dish.html';
         //alert(window.lunch[current]);
+        if (localStorage.getItem("currentTab")=="0")
+        localStorage.setItem("menu", breakfast[current]);
+        if (localStorage.getItem("currentTab")=="1")
         localStorage.setItem("menu", lunch[current]);
+        if (localStorage.getItem("currentTab")=="2")
+        localStorage.setItem("menu", dinner[current]);
+        
+        
     }
     function toBreakfast(){
         $('.viewport').empty();
         localStorage.setItem("currentTab","0");
+        show_breakfast();
         $('.tabselected').addClass("tab");
         $('.tabselected').removeClass("tabselected");
         $('.tab-2').addClass("tabselected");
@@ -78,6 +86,7 @@
     function toLunch(){
         $('.viewport').empty();
         localStorage.setItem("currentTab","1");
+        show_lunch();
         $('.tabselected').addClass("tab");
         $('.tabselected').removeClass("tabselected");
         $('.tab-1half').addClass("tabselected");
@@ -86,6 +95,7 @@
     function toDinner(){
         $('.viewport').empty();
         localStorage.setItem("currentTab","2");
+        show_dinner();
         $('.tabselected').addClass("tab");
         $('.tabselected').removeClass("tabselected");
         $('.tab-1').addClass("tabselected");
