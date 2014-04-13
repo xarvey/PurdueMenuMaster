@@ -12,6 +12,72 @@ var dinner_item;
 
 
 var current = 2;
+
+function checkInEarhart()
+{
+    var j = 0;
+    var d = new Date().getHours();
+    var i;
+    var tot=0;
+    if (d<=10)
+    for (i=0; i<breakfast_item[j].length; i++)
+    {
+        var num=parseInt(localStorage.getItem(breakfast_item[j][i].name));
+        if( num == 1 ){
+            localStorage.setItem(breakfast_item[j][i].name,2);
+        }
+    }
+    else if (d<=15)
+    for (i=0; i<lunch_item[j].length; i++)
+    {
+        var num=parseInt(localStorage.getItem(lunch_item[j][i].name));
+        if( num == 1 ){
+            localStorage.setItem(lunch_item[j][i].name,2);
+        }
+    }
+    else if (d<=21)
+    for (i=0; i<dinner_item[j].length; i++)
+    {
+        var num=parseInt(localStorage.getItem(dinner_item[j][i].name));
+        if( num == 1 ){
+            localStorage.setItem(dinner_item[j][i].name,2);
+        }
+    }
+    findBest();
+    asyncLoop({
+    length : 1000,
+    functionToLoop : function(loop, i){
+        setTimeout(function(){
+            //document.write('Iteration ' + i + ' <br>');        
+            $('.recName').text("---");
+            $('.recDes').text("Calculating");
+            loop();
+            
+        },100);
+    },
+    callback : function(){
+        //document.write('All done!');
+       var ear = parseInt(localStorage.getItem("Earhart"));
+       var wil = parseInt(localStorage.getItem("Wiley"));
+       $('location').text("Recommended");
+       if(ear>=wil){
+            $('.recName').text("EHRT");
+            $('.recDes').text("Earhart Dining Court");
+            $('.js-fav1').text(localStorage.getItem("max0_0_name"));
+            $('.js-fav2').text(localStorage.getItem("max0_1_name"));
+       }
+       else{
+            $('.recName').text("WILY");
+            $('.recDes').text("Wiley Dining Court");
+            console.log(localStorage.getItem("max1_0_name"));
+            $('.js-fav1').text(localStorage.getItem("max1_0_name"));
+            $('.js-fav2').text(localStorage.getItem("max1_1_name"));
+       }
+        console.log("Earhart: " + ear +" vs " + "Wiley: " + wil);
+    }    
+});
+}
+
 function menu_item(name,vegetarian,score,location)
 {
     this.name=name;
@@ -124,6 +190,7 @@ asyncLoop({
             $('.js-fav1').text(localStorage.getItem("max1_0_name"));
             $('.js-fav2').text(localStorage.getItem("max1_1_name"));
        }
+        console.log("Earhart: " + ear +" vs " + "Wiley: " + wil);
     }    
 });
 
