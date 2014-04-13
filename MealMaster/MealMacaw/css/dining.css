@@ -523,11 +523,16 @@ body {
 }
 
 .tab-2 {
-  top: 47px;
+  top: 46px;
   left: 0;
   z-index: 70;
 }
 
+.tab-1half {
+  top: 46px;
+  left: 33.15%;
+  z-index: 73;
+}
 .text-1 {
   position: relative;
   z-index: 1;

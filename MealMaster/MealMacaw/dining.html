@@ -34,15 +34,15 @@
           <img class="image image-2" src="images/rank.png">
         </div>
       </div>
-      <div class="tab tab-1 clearfix">
+      <div class="tab tab-1 clearfix" onclick="toDinner();">
         <div class="element element-2"></div>
         <p class="text _text">Dinner</p>
       </div>
-      <div class="tabselected clearfix">
+      <div class="tabselected tab-1half clearfix" onclick="toLunch();">
         <div class="element"></div>
         <p class="text _text">Lunch</p>
       </div>
-      <div class="tab tab-2 clearfix">
+      <div class="tab tab-2 clearfix" onclick="toBreakfast();">
         <div class="element element-4"></div>
         <p class="text text-9">Breakfast</p>
       </div>
@@ -74,6 +74,22 @@
         $('.tabselected').removeClass("tabselected");
         $('.tab-2').addClass("tabselected");
         $('.tab-2').removeClass("tab");
+    }
+    function toLunch(){
+        $('.viewport').empty();
+        localStorage.setItem("currentTab","1");
+        $('.tabselected').addClass("tab");
+        $('.tabselected').removeClass("tabselected");
+        $('.tab-1half').addClass("tabselected");
+        $('.tab-1half').removeClass("tab");
+    }
+    function toDinner(){
+        $('.viewport').empty();
+        localStorage.setItem("currentTab","2");
+        $('.tabselected').addClass("tab");
+        $('.tabselected').removeClass("tabselected");
+        $('.tab-1').addClass("tabselected");
+        $('.tab-1').removeClass("tab");
     }
   </script>
   <script src="js/dining.js"></script>
