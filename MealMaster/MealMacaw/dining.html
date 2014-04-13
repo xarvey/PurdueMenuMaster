@@ -75,35 +75,8 @@
         if (localStorage.getItem("currentTab")=="2")
         localStorage.setItem("menu", dinner[x][current]);
         
-        
     }
-    function toBreakfast(){
-        $('.viewport').empty();
-        localStorage.setItem("currentTab","0");
-        show_breakfast();
-        $('.tabselected').addClass("tab");
-        $('.tabselected').removeClass("tabselected");
-        $('.tab-2').addClass("tabselected");
-        $('.tab-2').removeClass("tab");
-    }
-    function toLunch(){
-        $('.viewport').empty();
-        localStorage.setItem("currentTab","1");
-        show_lunch();
-        $('.tabselected').addClass("tab");
-        $('.tabselected').removeClass("tabselected");
-        $('.tab-1half').addClass("tabselected");
-        $('.tab-1half').removeClass("tab");
-    }
-    function toDinner(){
-        $('.viewport').empty();
-        localStorage.setItem("currentTab","2");
-        show_dinner();
-        $('.tabselected').addClass("tab");
-        $('.tabselected').removeClass("tabselected");
-        $('.tab-1').addClass("tabselected");
-        $('.tab-1').removeClass("tab");
-    }
+    
   </script>
   <script src="js/dining.js"></script>
   <script src="js/menu.js"></script>
