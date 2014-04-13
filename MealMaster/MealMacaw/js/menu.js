@@ -19,34 +19,14 @@ function menu_item(name,vegetarian,score)
 $.ajax({
 	url: 'menu.xml',
 	dataType: 'xml',
+    
+    
 	
 	success: function(data)
 	{
-	$(data).find('Menu Breakfast MenuSection Name').each(function()
-	{
-		
-		var item = $(this).text();
-		breakfast.push(item);
-		
-	});
-	
-	$(data).find('Menu Breakfast MenuSection MenuItem Name').each(function()
-	{			
-		var item = new menu_item($(this).text(),$(this).next().text(),0);	
-		breakfast_item.push(item);
-		
-	});
-	
-	for (i=0;i<breakfast.length;i++)
-	{
-		var flag=false;
-		for (j=0; j<breakfast_item.length; j++)
-		 if (breakfast_item[j].name==breakfast[i]) flag=true;
-		if (!flag) breakfast_category.push(breakfast[i]);
-	}
 	
 	
-	
+	get_breakfast(data);
 	
 	$(data).find('Menu Lunch MenuSection Name').each(function() //all the name
 	{
@@ -99,3 +79,29 @@ $.ajax({
     }
     
 });
+
+function get_breakfast(data)
+    {
+    $(data).find('Menu Breakfast MenuSection Name').each(function()
+	{
+		
+		var item = $(this).text();
+		breakfast.push(item);
+		
+	});
+	
+	$(data).find('Menu Breakfast MenuSection MenuItem Name').each(function()
+	{			
+		var item = new menu_item($(this).text(),$(this).next().text(),0);	
+		breakfast_item.push(item);
+		
+	});
+	
+	for (i=0;i<breakfast.length;i++)
+	{
+		var flag=false;
+		for (j=0; j<breakfast_item.length; j++)
+		 if (breakfast_item[j].name==breakfast[i]) flag=true;
+		if (!flag) breakfast_category.push(breakfast[i]);
+	}
+    }
