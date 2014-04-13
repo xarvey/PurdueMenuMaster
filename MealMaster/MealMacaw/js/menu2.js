@@ -220,8 +220,8 @@ function cal_score(j)
         var d = new Date().getHours();
         var i;
         var tot=0;
-        localStorage.setItem("max"+j+"_0",0);
-        localStorage.setItem("max"+j+"_1",0);
+        localStorage.setItem("max"+j+"_0",-1);
+        localStorage.setItem("max"+j+"_1",-1);
         if (d<=10)
         for (i=0; i<breakfast_item[j].length; i++)
         {
