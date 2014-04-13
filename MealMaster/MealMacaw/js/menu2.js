@@ -28,31 +28,53 @@ var dining_court=['Earhart',
                   
 var dining; 
 var x = parseInt(localStorage.getItem("dining"));
-$.ajax({
-    
-	url: dining_court[parseInt(localStorage.getItem("dining"))]+'.xml',
-	dataType: 'xml',
-	
-	success: function(data)
-	{
-        x = parseInt(localStorage.getItem("dining"));
-        localStorage.setItem("diningname", dining_court[x]);
-        $('.diningname').text(localStorage.getItem('diningname'));
-        init();
-        get_breakfast(data,x);
-	    get_lunch(data,x);	
-        get_dinner(data,x);    
-	    show_lunch();
-        localStorage.setItem("currentTab",1);
-        cal_score(x);
-	},
-	
-	error: function() {
-	$('.timeline').text('fuck you');
-		//confirm('Fuck you');
-    }
-    
-});
+                  
+function parseFile( path, id, show) {
+
+    function parseXml(data){
+            x = parseInt(localStorage.getItem("dining"));
+            localStorage.setItem("diningname", dining_court[x]);
+            $('.diningname').text(localStorage.getItem('diningname'));
+            init();
+            get_breakfast(data,x);
+            get_lunch(data,x);	
+            get_dinner(data,x);
+            if(show){
+                show_lunch();
+                localStorage.setItem("currentTab",1);
+            }
+            cal_score(x);
+    };
+
+    $.ajax({
+        type: "GET",
+        url: path,
+        dataType: "xml",
+        success: parseXml
+    });
+}
+findBest();
+//parseFile("Earhart.xml", 0, false);
+//parseFile("Wiley.xml", 1, false);
+
+function findBest(){
+       parseFile("Earhart.xml", 0, false);
+       parseFile("Wiley.xml", 1, false);
+       var ear = parseInt(localStorage.getItem("Earhart"));
+       var wil = parseInt(localStorage.getItem("Wiley"));
+       if(ear>wil){
+            $('.recName').text("EHRT");
+            $('.recDes').text("Earhart Dining Court");
+            $('.js-fav1').text(localStorage.getItem("max0_0_name"));
+            $('.js-fav2').text(localStorage.getItem("max0_1_name"));
+       }
+       else{
+            $('.recName').text("WILY");
+            $('.recDes').text("Wiley Dining Court");
+            $('.js-fav1').text(localStorage.getItem("max1_0_name"));
+            $('.js-fav2').text(localStorage.getItem("max1_1_name"));
+       }
+}
 
 function init()
 {
@@ -74,24 +96,50 @@ function cal_score(j)
     {
         var d = new Date().getHours();
         var i;
-        var j;
         var tot=0;
+        localStorage.setItem("max"+j+"_0",0);
+        localStorage.setItem("max"+j+"_1",0);
         if (d<=10)
         for (i=0; i<breakfast_item[j].length; i++)
         {
             var num=parseInt(localStorage.getItem(breakfast_item[j][i].name));
+            console.log(num + " " + dining_court[j] + " " + breakfast_item[j][i].name);
+            if( parseInt(localStorage.getItem("max"+j+"_0")) < num ){
+                localStorage.setItem("max"+j+"_0", num);
+                localStorage.setItem("max"+j+"_0_name", breakfast_item[j][i].name);
+            }
+            else if( parseInt(localStorage.getItem("max"+j+"_1")) < num ){
+                localStorage.setItem("max"+j+"_1", num);
+                localStorage.setItem("max"+j+"_1_name", breakfast_item[j][i].name);
+            }
             tot+=num;
         }
         else if (d<=15)
         for (i=0; i<lunch_item[j].length; i++)
         {
             var num=parseInt(localStorage.getItem(lunch_item[j][i].name));
+            if( parseInt(localStorage.getItem("max"+j+"_0")) < num ){
+                localStorage.setItem("max"+j+"_0", num);
+                localStorage.setItem("max"+j+"_0_name", lunch_item[j][i].name);
+            }
+            else if( parseInt(localStorage.getItem("max"+j+"_1")) < num ){
+                localStorage.setItem("max"+j+"_1", num);
+                localStorage.setItem("max"+j+"_1_name", lunch_item[j][i].name);
+            }
             tot+=num;
         }
         else if (d<=21)
         for (i=0; i<dinner_item[j].length; i++)
         {
             var num=parseInt(localStorage.getItem(dinner_item[j][i].name));
+            if( parseInt(localStorage.getItem("max"+j+"_0")) < num ){
+                localStorage.setItem("max"+j+"_0", num);
+                localStorage.setItem("max"+j+"_0_name", dinner_item[j][i].name);
+            }
+            else if( parseInt(localStorage.getItem("max"+j+"_1")) < num ){
+                localStorage.setItem("max"+j+"_1", num);
+                localStorage.setItem("max"+j+"_1_name", dinner_item[j][i].name);
+            }
             tot+=num;
         }
         localStorage.setItem(dining_court[j],tot);
@@ -150,7 +198,7 @@ function get_breakfast(data,x)
 	
 	$(data).find('Menu Breakfast MenuSection MenuItem Name').each(function()
 	{			
-		var item = new menu_item($(this).text(),$(this).next().text(),0);	
+		var item = new menu_item($(this).text(),$(this).next().text(),1);	
 		breakfast_item[x].push(item);		
         if (localStorage.getItem(item.name)==null)
             localStorage.setItem(item.name,item.score);
@@ -183,7 +231,7 @@ function get_lunch(data,x)
 	$(data).find('Menu Lunch MenuSection MenuItem Name').each(function() //all the item
 	{
 		
-		var item = new menu_item($(this).text(),$(this).next().text(),0);	
+		var item = new menu_item($(this).text(),$(this).next().text(),1);	
 		lunch_item[x].push(item);
         if (localStorage.getItem(item.name)==null)
             localStorage.setItem(item.name,item.score);
@@ -218,7 +266,7 @@ function get_dinner(data,x)
 	$(data).find('Menu Dinner MenuSection MenuItem Name').each(function() //all the item
 	{
 		
-		var item = new menu_item($(this).text(),$(this).next().text(),0);	
+		var item = new menu_item($(this).text(),$(this).next().text(),1);	
 		dinner_item[x].push(item);
         if (localStorage.getItem(item.name)==null)
         localStorage.setItem(item.name,item.score);
