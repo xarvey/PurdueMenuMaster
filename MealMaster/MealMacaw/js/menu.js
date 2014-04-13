@@ -73,7 +73,7 @@ $.ajax({
             $( ".viewport" ).append( "<div class=\"meal-section\"><p class=\"sectiontext\">"+lunch[i]+"</p><div class=\"meal-section-text\"></div></div>");
         }
         else{
-             $( ".viewport" ).append( "<div onClick=\"alerts("+i+");\" class=\"dishcontainer d"+i.toString+"\" href='dish.html'><p class=\"dishtext\">"+lunch_item[i].name+"</p><div class=\"dishbg\"></div</div>" );
+             $( ".viewport" ).append( "<div onClick=\"alerts("+i+");\" class=\"dishcontainer d"+i.toString+"\" href='dish.html'><p class=\"dishtext\">"+lunch[i]+"</p><div class=\"dishbg\"></div</div>" );
         }
 	}
 	
@@ -97,5 +97,3 @@ $.ajax({
     }
     
 });
-
-

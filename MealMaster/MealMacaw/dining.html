@@ -64,7 +64,8 @@
     function alerts(e){
         current = e;
         window.location='dish.html';
-        //alert(current);
+        //alert(window.lunch[current]);
+        localStorage.setItem("menu", lunch[current]);
     }
   </script>
   <script src="js/dining.js"></script>

@@ -10,4 +10,5 @@
       target = 0;
     $screen.css('left', target); 
   }
+  
 })();
