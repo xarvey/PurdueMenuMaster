@@ -1,14 +1,14 @@
-var breakfast = new Array(5);
-var lunch = new Array(5);
-var dinner = new Array(5);
+var breakfast;
+var lunch ;
+var dinner;
 
-var breakfast_category =new Array(5);
-var lunch_category = new Array(5);
-var dinner_category = new Array(5);
+var breakfast_category;
+var lunch_category;
+var dinner_category;
 
-var breakfast_item =new Array(5);
-var lunch_item = new Array(5);
-var dinner_item = new Array(5);
+var breakfast_item;
+var lunch_item ;
+var dinner_item;
 
 
 var current = 2;
@@ -16,7 +16,7 @@ function menu_item(name,vegetarian,score,location)
 {
     this.name=name;
     this.vegetarian=vegetarian;
-    this.score=score;
+    this.score=score; 
     this.location=location;
 }
 var dining_court=['Earhart',
@@ -38,14 +38,13 @@ $.ajax({
         x = parseInt(localStorage.getItem("dining"));
         localStorage.setItem("diningname", dining_court[x]);
         $('.diningname').text(localStorage.getItem('diningname'));
-        for (var i=0; i<2; i++)
-        {
-	       get_breakfast(data,i);
-	       get_lunch(data,i);	
-           get_dinner(data,i);
-        }
+        init();
+            get_breakfast(data,x);
+	       get_lunch(data,x);	
+           get_dinner(data,x);    
 	    show_lunch();
         localStorage.setItem("currentTab",1);
+        cal_score(x);
 	},
 	
 	error: function() {
@@ -55,7 +54,49 @@ $.ajax({
     
 });
 
-    
+function init()
+{
+    if (breakfast==null) breakfast= new Array(5);
+
+if (lunch==null) lunch = new Array(5);
+if (dinner==null)dinner = new Array(5);
+
+if (breakfast_category==null) breakfast_category =new Array(5);
+if (lunch_category==null) lunch_category = new Array(5);
+if (dinner_category==null) dinner_category = new Array(5);
+
+if (breakfast_item==null) breakfast_item =new Array(5);
+if (lunch_item==null) lunch_item = new Array(5);
+if (dinner_item==null) dinner_item = new Array(5);
+}
+
+function cal_score(j)
+    {
+        var d = new Date().getHours();
+        var i;
+        var j;
+        var tot=0;
+        if (d<=10)
+        for (i=0; i<breakfast_item[j].length; i++)
+        {
+            var num=parseInt(localStorage.getItem(breakfast_item[j][i].name));
+            tot+=num;
+        }
+        else if (d<=15)
+        for (i=0; i<lunch_item[j].length; i++)
+        {
+            var num=parseInt(localStorage.getItem(lunch_item[j][i].name));
+            tot+=num;
+        }
+        else if (d<=21)
+        for (i=0; i<dinner_item[j].length; i++)
+        {
+            var num=parseInt(localStorage.getItem(dinner_item[j][i].name));
+            tot+=num;
+        }
+        localStorage.setItem(dining_court[j],tot);
+        
+    }
 
 function show_breakfast()
 {
