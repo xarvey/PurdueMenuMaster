@@ -52,7 +52,7 @@ $.ajax({
             localStorage.setItem("currentTab",1);
         }
         else {
-            todinner();
+            toDinner();
             localStorage.setItem("currentTab",2);
         }
         cal_score(x);
